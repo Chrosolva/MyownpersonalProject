@@ -1,1 +1,13 @@
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\bin\Debug\MySql.Data.dll
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\bin\Debug\MySql.Data.xml
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\CigarretteManagement.csprojResolveAssemblyReference.cache
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.additem.resources
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.Home.resources
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.Login.resources
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\CigarretteManagement.csproj.GenerateResource.Cache
 D:\KuiHaoKOKO's Project\Cigarette Management\Login\bin\Debug\Login.exe.config
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\bin\Debug\Login.exe
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\bin\Debug\Login.pdb
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.Properties.Resources.resources
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.exe
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.pdb

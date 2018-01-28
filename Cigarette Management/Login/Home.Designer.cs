@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.showdrawer = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_checkdrawer = new System.Windows.Forms.Button();
@@ -40,16 +40,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showdrawer)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // showdrawer
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(416, 237);
-            this.dataGridView1.TabIndex = 0;
+            this.showdrawer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showdrawer.Location = new System.Drawing.Point(12, 65);
+            this.showdrawer.Name = "showdrawer";
+            this.showdrawer.Size = new System.Drawing.Size(416, 237);
+            this.showdrawer.TabIndex = 0;
             // 
             // btn_add
             // 
@@ -59,7 +59,6 @@
             this.btn_add.TabIndex = 1;
             this.btn_add.Text = "Add item";
             this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_edit
             // 
@@ -166,11 +165,12 @@
             this.Controls.Add(this.btn_checkdrawer);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.showdrawer);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Home_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.showdrawer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,7 +178,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView showdrawer;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_checkdrawer;

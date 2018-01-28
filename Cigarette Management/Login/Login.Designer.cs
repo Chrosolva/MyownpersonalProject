@@ -114,7 +114,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Name = "Login";
-            this.Text = "bb";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
