@@ -43,5 +43,50 @@ namespace Login
         {
 
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            additem additm = new additem();
+            additm.Show();
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            string keyword = txt_srch.Text; 
+            ConnectDB databaseconnection = new ConnectDB();
+            MySqlDataAdapter adapter;
+            if (databaseconnection.OpenConnection() == true)
+            {
+                adapter = new MySqlDataAdapter("SELECT * FROM `rak` WHERE `rak`.`Nama_Bahan`= '"+keyword.ToString()+"';", databaseconnection.connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                showdrawer.DataSource = ds.Tables[0];
+                //close connection 
+                databaseconnection.CloseConnection();
+            }
+        }
+
+        private void txt_srch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_srch.Text = "";
+        }
+
+        private void txt_srch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                string keyword = txt_srch.Text;
+                ConnectDB databaseconnection = new ConnectDB();
+                MySqlDataAdapter adapter;
+                if (databaseconnection.OpenConnection() == true)
+                {
+                    adapter = new MySqlDataAdapter("SELECT * FROM `rak` WHERE `rak`.`Nama_Bahan`= '" + keyword.ToString() + "';", databaseconnection.connection);
+                    DataSet ds = new DataSet();
+                    adapter.Fill(ds);
+                    showdrawer.DataSource = ds.Tables[0];
+                    //close connection 
+                    databaseconnection.CloseConnection();
+                }
+            }
+        }
     }
 }

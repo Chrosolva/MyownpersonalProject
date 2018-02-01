@@ -115,6 +115,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

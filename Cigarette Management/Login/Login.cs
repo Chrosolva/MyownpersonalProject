@@ -24,13 +24,18 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Hide();
+
+            this.Hide();
             Home home = new Home();
             home.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }
