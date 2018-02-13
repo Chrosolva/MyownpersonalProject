@@ -11,3 +11,4 @@ D:\KuiHaoKOKO's Project\Cigarette Management\Login\bin\Debug\Login.pdb
 D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.Properties.Resources.resources
 D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.exe
 D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.pdb
+D:\KuiHaoKOKO's Project\Cigarette Management\Login\obj\Debug\Login.Addbahan.resources

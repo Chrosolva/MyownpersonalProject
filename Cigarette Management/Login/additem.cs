@@ -85,5 +85,12 @@ namespace Login
             }
 
         }
+
+        private void btn_addbahan_Click(object sender, EventArgs e)
+        {
+            Addbahan adbhn = new Addbahan();
+            adbhn.Show();
+            this.Hide();
+        }
     }
 }

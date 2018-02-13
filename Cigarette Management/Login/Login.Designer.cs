@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +58,9 @@
             // txt_password
             // 
             this.txt_password.Location = new System.Drawing.Point(112, 119);
+            this.txt_password.MaxLength = 8;
             this.txt_password.Name = "txt_password";
+            this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(100, 21);
             this.txt_password.TabIndex = 2;
             // 
@@ -100,11 +103,21 @@
             this.btn_register.UseVisualStyleBackColor = true;
             this.btn_register.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(243, 32);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(167, 197);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(422, 261);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.label3);
@@ -130,6 +143,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Button btn_register;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

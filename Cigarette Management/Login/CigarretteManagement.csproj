@@ -47,12 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addbahan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Addbahan.Designer.cs">
+      <DependentUpon>Addbahan.cs</DependentUpon>
+    </Compile>
     <Compile Include="additem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="additem.Designer.cs">
       <DependentUpon>additem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bahan.cs" />
     <Compile Include="ConnectDB.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -66,8 +73,13 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <EmbeddedResource Include="Addbahan.resx">
+      <DependentUpon>Addbahan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="additem.resx">
       <DependentUpon>additem.cs</DependentUpon>
     </EmbeddedResource>

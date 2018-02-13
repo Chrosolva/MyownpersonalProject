@@ -75,6 +75,7 @@
             this.btn_addbahan.TabIndex = 3;
             this.btn_addbahan.Text = "add bahan";
             this.btn_addbahan.UseVisualStyleBackColor = true;
+            this.btn_addbahan.Click += new System.EventHandler(this.btn_addbahan_Click);
             // 
             // btn_editbahan
             // 

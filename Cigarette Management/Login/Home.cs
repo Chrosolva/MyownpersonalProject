@@ -25,7 +25,7 @@ namespace Login
             ConnectDB databaseconnection = new ConnectDB();
             MySqlDataAdapter adapter;
             if (databaseconnection.OpenConnection() == true) {
-                adapter = new MySqlDataAdapter("SELECT `rak`.`ID_Rak`,`rak`.`Nama_Bahan`,`rak`.`Tanggal_Masuk` FROM `rak` WHERE `rak`.`ID_Bahan`!='' ", databaseconnection.connection);
+                adapter = new MySqlDataAdapter("SELECT * FROM `rak`", databaseconnection.connection);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 showdrawer.DataSource = ds.Tables[0];
@@ -52,17 +52,22 @@ namespace Login
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            string keyword = txt_srch.Text; 
+            string keyword = txt_srch.Text;
+            string query = "SELECT * FROM `rak` WHERE `rak`.`Nama_Bahan`= '" + keyword.ToString() + "';";
+            if (keyword == "") {
+                query = "SELECT * FROM `rak`"; 
+            }
             ConnectDB databaseconnection = new ConnectDB();
             MySqlDataAdapter adapter;
             if (databaseconnection.OpenConnection() == true)
             {
-                adapter = new MySqlDataAdapter("SELECT * FROM `rak` WHERE `rak`.`Nama_Bahan`= '"+keyword.ToString()+"';", databaseconnection.connection);
+                adapter = new MySqlDataAdapter(query, databaseconnection.connection);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 showdrawer.DataSource = ds.Tables[0];
                 //close connection 
                 databaseconnection.CloseConnection();
+                txt_srch.Text = "";
             }
         }
 
@@ -75,16 +80,22 @@ namespace Login
         {
             if (e.KeyCode == Keys.Enter) {
                 string keyword = txt_srch.Text;
+                string query = "SELECT * FROM `rak` WHERE `rak`.`Nama_Bahan`= '" + keyword.ToString() + "';";
+                if (keyword == "")
+                {
+                    query = "SELECT * FROM `rak`";
+                }
                 ConnectDB databaseconnection = new ConnectDB();
                 MySqlDataAdapter adapter;
                 if (databaseconnection.OpenConnection() == true)
                 {
-                    adapter = new MySqlDataAdapter("SELECT * FROM `rak` WHERE `rak`.`Nama_Bahan`= '" + keyword.ToString() + "';", databaseconnection.connection);
+                    adapter = new MySqlDataAdapter(query, databaseconnection.connection);
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     showdrawer.DataSource = ds.Tables[0];
                     //close connection 
                     databaseconnection.CloseConnection();
+                    txt_srch.Text = "";
                 }
             }
         }

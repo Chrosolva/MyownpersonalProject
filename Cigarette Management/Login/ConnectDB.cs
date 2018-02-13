@@ -16,6 +16,7 @@ namespace Login
         private string database;
         private string uid;
         private string password;
+        public string connectionString;
 
         //Constructor
         public ConnectDB()
@@ -29,7 +30,7 @@ namespace Login
             database = "material_management";
             uid = "root";
             password = "";
-            string connectionString;
+            
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
@@ -82,9 +83,8 @@ namespace Login
         }
 
         //Insert statement
-        public void Insert()
+        public void Insert ( string query)
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -100,9 +100,8 @@ namespace Login
             }
         }
         //Update statement
-        public void Update()
+        public void Update( string query)
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -123,9 +122,8 @@ namespace Login
         }
 
         //Delete statement
-        public void Delete()
+        public void Delete( string query)
         {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
             if (this.OpenConnection() == true)
             {

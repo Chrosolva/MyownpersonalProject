@@ -15,6 +15,7 @@ namespace Login
         public Login()
         {
             InitializeComponent();
+            LoginUser lgn = new LoginUser();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -24,10 +25,19 @@ namespace Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
-            Home home = new Home();
-            home.Show();
+            LoginUser lgn = new LoginUser();
+            bool masuk;
+            masuk = lgn.checkLogin(txt_username.Text, txt_password.Text);
+            if (masuk)
+            {
+                this.Hide();
+                Home home = new Home();
+                home.Show();
+            }
+            else {
+                MessageBox.Show("Periksa kembali username dan password");
+            }
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -36,6 +46,11 @@ namespace Login
         }
 
         private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
