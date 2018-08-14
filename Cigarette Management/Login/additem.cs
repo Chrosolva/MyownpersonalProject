@@ -16,6 +16,7 @@ namespace Login
         public additem()
         {
             InitializeComponent();
+            
             //DATA GRID VIEW PROPERTIES 
             showbahan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -33,7 +34,8 @@ namespace Login
                 //close connection 
                 databaseconnection.CloseConnection();
             }
-        }
+    }
+        private Bahan tempp; 
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -92,5 +94,65 @@ namespace Login
             adbhn.Show();
             this.Hide();
         }
+
+        private void showbahan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex; // get the row index 
+            DataGridViewRow selectedrow = showbahan.Rows[index];
+            int idbahan = (int)selectedrow.Cells[0].Value;
+            string namabahan = selectedrow.Cells[1].Value.ToString();
+            tempp = new Bahan(idbahan, namabahan); 
+            
+        }
+
+        private void btn_insertdrawer_Click(object sender, EventArgs e)
+        {
+            List<rak> listrak = new List<rak>();
+            ConnectDB databaseconnection = new ConnectDB();
+            MySqlCommand myCommand = (MySqlCommand)databaseconnection.connection.CreateCommand();
+            myCommand.CommandText = "SELECT * FROM `rak`";
+            databaseconnection.OpenConnection();
+            MySqlDataReader reader = myCommand.ExecuteReader();
+            try
+            {
+                //Always Call Read Before Accessing Data 
+                while (reader.Read())
+                {
+                    if (reader.GetInt32(1)!=null)
+                    {
+                        listrak.Add(new rak(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), (reader.GetDateTime(3))));
+                    }
+                    else {
+                        DateTime tmp = new DateTime();
+                        tmp = DateTime.Today.Date; 
+                        listrak.Add(new rak(reader.GetString(0), reader.GetInt32(1), reader.GetString(2),tmp));
+                    }
+                }
+            }
+            finally
+            {
+                //Always Call Close when done reading. 
+                reader.Close();
+                //Close Connection when done with it 
+                databaseconnection.CloseConnection();
+            }
+
+            foreach (rak x in listrak)
+            {
+                if (x.Nama_Bahan == "NULL")
+                {
+                    databaseconnection.OpenConnection();
+                    databaseconnection.Update(x.InsertintoDrawer(x.ID_rak, tempp));
+                    databaseconnection.CloseConnection();
+                    MessageBox.Show("Berhasil"); 
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show("Rak Penuh!!!");
+                }
+            }
+        }
     }
 }
+    

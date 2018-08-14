@@ -76,6 +76,7 @@
     <Compile Include="LoginUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rak.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Addbahan.resx">
       <DependentUpon>Addbahan.cs</DependentUpon>

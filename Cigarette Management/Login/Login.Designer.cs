@@ -35,7 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_submit = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -103,21 +102,11 @@
             this.btn_register.UseVisualStyleBackColor = true;
             this.btn_register.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(243, 32);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(167, 197);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 261);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(246, 261);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.label3);
@@ -143,7 +132,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Button btn_register;
-        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

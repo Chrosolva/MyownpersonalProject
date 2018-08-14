@@ -45,6 +45,7 @@
             this.showbahan.Name = "showbahan";
             this.showbahan.Size = new System.Drawing.Size(378, 221);
             this.showbahan.TabIndex = 0;
+            this.showbahan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showbahan_CellClick);
             // 
             // txt_listbahan
             // 
@@ -103,6 +104,7 @@
             this.btn_insertdrawer.TabIndex = 6;
             this.btn_insertdrawer.Text = "Insert To Drawer";
             this.btn_insertdrawer.UseVisualStyleBackColor = true;
+            this.btn_insertdrawer.Click += new System.EventHandler(this.btn_insertdrawer_Click);
             // 
             // additem
             // 

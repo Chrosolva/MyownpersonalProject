@@ -22,6 +22,14 @@ namespace Login
             this.role = roled; 
         }
 
+        public User( string username, string password, string address, bool roled)
+        {
+            this.username = username;
+            this.password = password;
+            this.address = address;
+            this.role = roled;
+        }
+
         public int getId() {
             return this.Iduser; 
         }

@@ -33,5 +33,7 @@ namespace Login
         public string deletebahan(int idbahan) {
             return "DELETE FROM `bahan` WHERE `bahan`.`ID_Bahan`=" + idbahan.ToString() + ";";
         }
+
+
     }
 }

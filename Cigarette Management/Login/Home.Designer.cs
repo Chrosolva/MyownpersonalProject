@@ -80,16 +80,16 @@
             // 
             // btn_sendlocation
             // 
-            this.btn_sendlocation.Location = new System.Drawing.Point(435, 174);
+            this.btn_sendlocation.Location = new System.Drawing.Point(434, 260);
             this.btn_sendlocation.Name = "btn_sendlocation";
-            this.btn_sendlocation.Size = new System.Drawing.Size(75, 36);
+            this.btn_sendlocation.Size = new System.Drawing.Size(157, 39);
             this.btn_sendlocation.TabIndex = 4;
             this.btn_sendlocation.Text = "Send Location";
             this.btn_sendlocation.UseVisualStyleBackColor = true;
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(516, 65);
+            this.btn_delete.Location = new System.Drawing.Point(516, 66);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 39);
             this.btn_delete.TabIndex = 6;
@@ -107,9 +107,9 @@
             // 
             // btn_receipt
             // 
-            this.btn_receipt.Location = new System.Drawing.Point(516, 171);
+            this.btn_receipt.Location = new System.Drawing.Point(435, 204);
             this.btn_receipt.Name = "btn_receipt";
-            this.btn_receipt.Size = new System.Drawing.Size(75, 39);
+            this.btn_receipt.Size = new System.Drawing.Size(156, 39);
             this.btn_receipt.TabIndex = 8;
             this.btn_receipt.Text = "Make receipt";
             this.btn_receipt.UseVisualStyleBackColor = true;
@@ -131,6 +131,7 @@
             this.txt_srch.TabIndex = 10;
             this.txt_srch.Text = " Search Drawer";
             this.txt_srch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_srch_MouseClick);
+            this.txt_srch.TextChanged += new System.EventHandler(this.txt_srch_TextChanged);
             this.txt_srch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_srch_KeyUp);
             // 
             // btn_search

@@ -99,5 +99,10 @@ namespace Login
                 }
             }
         }
+
+        private void txt_srch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
