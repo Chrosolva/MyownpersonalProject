@@ -133,5 +133,7 @@ namespace Login
             txt_namarokok.Text = cbxRokok.SelectedItem.ToString();
             this.browseclick();
         }
+
+        
     }
 }
