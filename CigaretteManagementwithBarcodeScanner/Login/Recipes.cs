@@ -56,6 +56,7 @@ namespace Login
 
             if (sendergrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0) {
                 //SendLocation 
+                SendLocation sndl = new SendLocation(); 
                 
             }
         }
