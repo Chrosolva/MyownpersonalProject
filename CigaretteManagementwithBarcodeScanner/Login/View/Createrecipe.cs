@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 
 namespace Login
@@ -19,10 +19,10 @@ namespace Login
             InitializeComponent();
             this.Fillcbx();
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlDataAdapter adapter;
+            SqlDataAdapter adapter;
             if (databaseconnection.OpenConnection() == true)
             {
-                adapter = new MySqlDataAdapter("SELECT * FROM `bahan`; ", databaseconnection.connection);
+                adapter = new SqlDataAdapter("SELECT * FROM bahan; ", databaseconnection.connection);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
                 DGVforIngredientsList.DataSource = ds.Tables[0];
@@ -48,7 +48,7 @@ namespace Login
                 
 
                 DataTable dt = new DataTable("rokok");
-                using (MySqlDataAdapter da = new MySqlDataAdapter(query, databaseconnection.connectionString))
+                using (SqlDataAdapter da = new SqlDataAdapter(query, databaseconnection.connectionString))
                 {
                     da.Fill(dt);
                 }

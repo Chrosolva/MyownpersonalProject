@@ -52,7 +52,6 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -66,72 +65,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Additem.cs">
+    <Compile Include="Controller\ControllerSendLocation.cs" />
+    <Compile Include="View\Additem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Additem.Designer.cs">
+    <Compile Include="View\Additem.Designer.cs">
       <DependentUpon>Additem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bahan.cs" />
+    <Compile Include="Model\Bahan.cs" />
     <Compile Include="ConnectDB.cs" />
-    <Compile Include="Createrecipe.cs">
+    <Compile Include="View\Createrecipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Createrecipe.Designer.cs">
+    <Compile Include="View\Createrecipe.Designer.cs">
       <DependentUpon>Createrecipe.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailBahan.cs" />
-    <Compile Include="DetailRak.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Controller\DetailBahan.cs" />
+    <Compile Include="Controller\DetailRak.cs" />
+    <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="View\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="View\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginUser.cs" />
-    <Compile Include="Recipes.cs">
+    <Compile Include="Controller\LoginUser.cs" />
+    <Compile Include="View\Recipes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Recipes.Designer.cs">
+    <Compile Include="View\Recipes.Designer.cs">
       <DependentUpon>Recipes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rak.cs" />
-    <Compile Include="Recipe.cs" />
-    <Compile Include="Rokok.cs" />
-    <Compile Include="SendLocation.cs">
+    <Compile Include="Model\Rak.cs" />
+    <Compile Include="Model\Recipe.cs" />
+    <Compile Include="Model\Rokok.cs" />
+    <Compile Include="View\SendLocation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SendLocation.Designer.cs">
+    <Compile Include="View\SendLocation.Designer.cs">
       <DependentUpon>SendLocation.cs</DependentUpon>
     </Compile>
-    <Compile Include="testing.cs">
+    <Compile Include="View\testing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testing.Designer.cs">
+    <Compile Include="View\testing.Designer.cs">
       <DependentUpon>testing.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <EmbeddedResource Include="Additem.resx">
+    <Compile Include="Model\User.cs" />
+    <EmbeddedResource Include="View\Additem.resx">
       <DependentUpon>Additem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Createrecipe.resx">
+    <EmbeddedResource Include="View\Createrecipe.resx">
       <DependentUpon>Createrecipe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="View\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Recipes.resx">
+    <EmbeddedResource Include="View\Recipes.resx">
       <DependentUpon>Recipes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -143,10 +143,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SendLocation.resx">
+    <EmbeddedResource Include="View\SendLocation.resx">
       <DependentUpon>SendLocation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="testing.resx">
+    <EmbeddedResource Include="View\testing.resx">
       <DependentUpon>testing.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -174,6 +174,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

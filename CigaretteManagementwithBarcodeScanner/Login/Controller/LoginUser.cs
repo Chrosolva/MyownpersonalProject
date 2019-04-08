@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Login
 {
@@ -13,12 +13,12 @@ namespace Login
         public LoginUser()
         {
             listuser = new List<User>();
-            string sql = "SELECT * FROM `user`;";
+            string sql = "SELECT * FROM Userr;";
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlCommand myCommand = (MySqlCommand)databaseconnection.connection.CreateCommand();
+            SqlCommand myCommand = (SqlCommand)databaseconnection.connection.CreateCommand();
             myCommand.CommandText = sql;
             databaseconnection.OpenConnection();
-            MySqlDataReader reader = myCommand.ExecuteReader();
+            SqlDataReader reader = myCommand.ExecuteReader();
             try
             {
                 //Always Call Read Before Accessing Data 

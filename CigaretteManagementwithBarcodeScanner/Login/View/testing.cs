@@ -12,16 +12,14 @@ namespace Login
 {
     public partial class testing : Form
     {
-        string dataOut;
-        string dataIn; 
+        public string dataOut;
+        public string dataIn; 
         public testing()
         {
             InitializeComponent();
             
 
         }
-
-       
 
         private void testing_Load(object sender, EventArgs e)
         {
@@ -39,6 +37,7 @@ namespace Login
                 serialPort1.DataBits = Convert.ToInt32(cBoxDataBits.Text);
                 serialPort1.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cBoxStopBits.Text);
                 serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity) , cBoxParityBits.Text);
+                serialPort1.NewLine = "\n"; 
 
                 serialPort1.Open();
                 progressBar1.Value = 100; 
@@ -61,13 +60,19 @@ namespace Login
         {
             if (serialPort1.IsOpen) {
                 dataOut = txtBoxDataOut.Text;
-                serialPort1.WriteLine(dataOut); 
+                serialPort1.Write(dataOut); 
             }
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            
+            dataIn = serialPort1.ReadLine();
+            this.Invoke(new EventHandler(ShowData));
+        }
+
+        private void ShowData(object sender, EventArgs e)
+        {
+            txtBoxdataIn.Text += dataIn;
         }
     }
 }

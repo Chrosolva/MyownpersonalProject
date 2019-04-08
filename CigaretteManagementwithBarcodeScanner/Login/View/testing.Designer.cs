@@ -48,11 +48,11 @@
             this.txtBoxDataOut = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rtBoxdataIn = new System.Windows.Forms.RichTextBox();
-            this.btnClearDataIn = new System.Windows.Forms.Button();
-            this.chBoxAlwaysUpdate = new System.Windows.Forms.CheckBox();
-            this.chBoxAddtoOldData = new System.Windows.Forms.CheckBox();
             this.lblDataInlength = new System.Windows.Forms.Label();
+            this.chBoxAddtoOldData = new System.Windows.Forms.CheckBox();
+            this.chBoxAlwaysUpdate = new System.Windows.Forms.CheckBox();
+            this.btnClearDataIn = new System.Windows.Forms.Button();
+            this.txtBoxdataIn = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -247,7 +247,7 @@
             this.groupBox3.Controls.Add(this.chBoxAddtoOldData);
             this.groupBox3.Controls.Add(this.chBoxAlwaysUpdate);
             this.groupBox3.Controls.Add(this.btnClearDataIn);
-            this.groupBox3.Controls.Add(this.rtBoxdataIn);
+            this.groupBox3.Controls.Add(this.txtBoxdataIn);
             this.groupBox3.Location = new System.Drawing.Point(329, 173);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(345, 209);
@@ -255,32 +255,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "receivercontrol";
             // 
-            // rtBoxdataIn
+            // lblDataInlength
             // 
-            this.rtBoxdataIn.Location = new System.Drawing.Point(6, 19);
-            this.rtBoxdataIn.Name = "rtBoxdataIn";
-            this.rtBoxdataIn.Size = new System.Drawing.Size(333, 108);
-            this.rtBoxdataIn.TabIndex = 0;
-            this.rtBoxdataIn.Text = "";
-            // 
-            // btnClearDataIn
-            // 
-            this.btnClearDataIn.Location = new System.Drawing.Point(17, 133);
-            this.btnClearDataIn.Name = "btnClearDataIn";
-            this.btnClearDataIn.Size = new System.Drawing.Size(97, 23);
-            this.btnClearDataIn.TabIndex = 6;
-            this.btnClearDataIn.Text = "Clear Data In";
-            this.btnClearDataIn.UseVisualStyleBackColor = true;
-            // 
-            // chBoxAlwaysUpdate
-            // 
-            this.chBoxAlwaysUpdate.AutoSize = true;
-            this.chBoxAlwaysUpdate.Location = new System.Drawing.Point(141, 138);
-            this.chBoxAlwaysUpdate.Name = "chBoxAlwaysUpdate";
-            this.chBoxAlwaysUpdate.Size = new System.Drawing.Size(97, 17);
-            this.chBoxAlwaysUpdate.TabIndex = 7;
-            this.chBoxAlwaysUpdate.Text = "Always Update";
-            this.chBoxAlwaysUpdate.UseVisualStyleBackColor = true;
+            this.lblDataInlength.AutoSize = true;
+            this.lblDataInlength.Location = new System.Drawing.Point(37, 193);
+            this.lblDataInlength.Name = "lblDataInlength";
+            this.lblDataInlength.Size = new System.Drawing.Size(83, 13);
+            this.lblDataInlength.TabIndex = 9;
+            this.lblDataInlength.Text = "Data In length : ";
             // 
             // chBoxAddtoOldData
             // 
@@ -292,14 +274,32 @@
             this.chBoxAddtoOldData.Text = "Add to Old Data";
             this.chBoxAddtoOldData.UseVisualStyleBackColor = true;
             // 
-            // lblDataInlength
+            // chBoxAlwaysUpdate
             // 
-            this.lblDataInlength.AutoSize = true;
-            this.lblDataInlength.Location = new System.Drawing.Point(37, 193);
-            this.lblDataInlength.Name = "lblDataInlength";
-            this.lblDataInlength.Size = new System.Drawing.Size(83, 13);
-            this.lblDataInlength.TabIndex = 9;
-            this.lblDataInlength.Text = "Data In length : ";
+            this.chBoxAlwaysUpdate.AutoSize = true;
+            this.chBoxAlwaysUpdate.Location = new System.Drawing.Point(141, 138);
+            this.chBoxAlwaysUpdate.Name = "chBoxAlwaysUpdate";
+            this.chBoxAlwaysUpdate.Size = new System.Drawing.Size(97, 17);
+            this.chBoxAlwaysUpdate.TabIndex = 7;
+            this.chBoxAlwaysUpdate.Text = "Always Update";
+            this.chBoxAlwaysUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnClearDataIn
+            // 
+            this.btnClearDataIn.Location = new System.Drawing.Point(17, 133);
+            this.btnClearDataIn.Name = "btnClearDataIn";
+            this.btnClearDataIn.Size = new System.Drawing.Size(97, 23);
+            this.btnClearDataIn.TabIndex = 6;
+            this.btnClearDataIn.Text = "Clear Data In";
+            this.btnClearDataIn.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxdataIn
+            // 
+            this.txtBoxdataIn.Location = new System.Drawing.Point(6, 19);
+            this.txtBoxdataIn.Name = "txtBoxdataIn";
+            this.txtBoxdataIn.Size = new System.Drawing.Size(333, 108);
+            this.txtBoxdataIn.TabIndex = 0;
+            this.txtBoxdataIn.Text = "";
             // 
             // testing
             // 
@@ -349,6 +349,6 @@
         private System.Windows.Forms.CheckBox chBoxAddtoOldData;
         private System.Windows.Forms.CheckBox chBoxAlwaysUpdate;
         private System.Windows.Forms.Button btnClearDataIn;
-        private System.Windows.Forms.RichTextBox rtBoxdataIn;
+        private System.Windows.Forms.RichTextBox txtBoxdataIn;
     }
 }

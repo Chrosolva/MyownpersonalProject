@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient; 
+using System.Data.SqlClient; 
 
 namespace Login
 {
@@ -26,10 +26,10 @@ namespace Login
 
         public void getAllrokok() {
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlCommand myCommand = (MySqlCommand)databaseconnection.connection.CreateCommand();
+            SqlCommand myCommand = (SqlCommand)databaseconnection.connection.CreateCommand();
             myCommand.CommandText = "SELECT * FROM rokok";
             databaseconnection.OpenConnection();
-            MySqlDataReader reader = myCommand.ExecuteReader();
+            SqlDataReader reader = myCommand.ExecuteReader();
             try
             {
                 while (reader.Read())

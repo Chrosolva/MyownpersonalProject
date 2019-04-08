@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient; 
+using System.Data.SqlClient; 
 
 namespace Login
 {
@@ -44,10 +44,10 @@ namespace Login
 
         public List<string> getAllRecipeName() {
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlCommand myCommand = (MySqlCommand)databaseconnection.connection.CreateCommand();
+            SqlCommand myCommand = (SqlCommand)databaseconnection.connection.CreateCommand();
             myCommand.CommandText = "SELECT * FROM resep";
             databaseconnection.OpenConnection();
-            MySqlDataReader reader = myCommand.ExecuteReader();
+            SqlDataReader reader = myCommand.ExecuteReader();
             try
             {
                 while (reader.Read())

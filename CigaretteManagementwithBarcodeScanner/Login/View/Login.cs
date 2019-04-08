@@ -28,6 +28,8 @@ namespace Login
                 this.Hide();
                 Home home = new Home();
                 home.Show();
+                //testing tst = new testing();
+                //tst.Show(); 
             }
             else
             {
@@ -46,15 +48,16 @@ namespace Login
                 if (masuk)
                 {
                   this.Hide();
-                Home home = new Home();
-                home.Show();
+                    Home home = new Home();
+                    home.Show();
+
+                    //testing tst = new testing();
+                    //tst.Show();
                 }
                 else
                 {
                     MessageBox.Show("Periksa kembali username dan password");
                 } 
-                //testing test = new testing();
-                //test.Show();
             }
         }
 

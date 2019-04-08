@@ -25,11 +25,11 @@ namespace Login
         }
 
         public string InsertBahan() {
-            return "INSERT INTO `bahan` (`bahan`.`ID_Bahan`,`bahan`.`Nama_Bahan`,`bahan`.`Grade`) VALUES ('" + this.ID_Bahan + "','" + this.Nama_Bahan + "','" + this.Grade.ToString() + "');"; 
+            return "INSERT INTO bahan (bahan.ID_Bahan,bahan.Nama_Bahan,bahan.Grade) VALUES (" + this.ID_Bahan + ",'" + this.Nama_Bahan + "','" + this.Grade.ToString() + "');"; 
         }
 
         public string updateBahan(int idbahan, string namabahan, char grade) {
-            return "UPDATE `bahan` SET `bahan`.`Nama_Bahan`='" + namabahan + "' WHERE `bahan`.`ID_Rak`=" + idbahan.ToString() + ";";
+            return "UPDATE bahan SET bahan.Nama_Bahan='" + namabahan + "' WHERE bahan.ID_Rak=" + idbahan.ToString() + ";";
         }
     }
 }

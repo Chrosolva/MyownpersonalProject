@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient; 
 
 namespace Login
 {
@@ -20,10 +20,10 @@ namespace Login
 
         public void getallisiRak() {
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlCommand myCommand = (MySqlCommand)databaseconnection.connection.CreateCommand();
-            myCommand.CommandText = "SELECT * FROM `rak` ;";
+            SqlCommand myCommand = (SqlCommand)databaseconnection.connection.CreateCommand();
+            myCommand.CommandText = "SELECT * FROM rak ;";
             databaseconnection.OpenConnection();
-            MySqlDataReader reader = myCommand.ExecuteReader();
+            SqlDataReader reader = myCommand.ExecuteReader();
             try
             {
                 while (reader.Read())
@@ -47,10 +47,10 @@ namespace Login
         public int countallisirak() {
             int jlh = 0;
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlCommand myCommand = (MySqlCommand)databaseconnection.connection.CreateCommand();
-            myCommand.CommandText = "SELECT * FROM `rak` ;";
+            SqlCommand myCommand = (SqlCommand)databaseconnection.connection.CreateCommand();
+            myCommand.CommandText = "SELECT * FROM rak ;";
             databaseconnection.OpenConnection();
-            MySqlDataReader reader = myCommand.ExecuteReader();
+            SqlDataReader reader = myCommand.ExecuteReader();
             try
             {
                 while (reader.Read())

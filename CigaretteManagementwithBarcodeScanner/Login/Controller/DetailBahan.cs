@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient; 
+
 
 namespace Login
 {
@@ -19,10 +20,10 @@ namespace Login
 
         public void getAllBahan() {
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlCommand myCommand = (MySqlCommand)databaseconnection.connection.CreateCommand();
-            myCommand.CommandText = "SELECT * FROM `bahan` ;";
+            SqlCommand myCommand = (SqlCommand)databaseconnection.connection.CreateCommand();
+            myCommand.CommandText = "SELECT * FROM bahan ;";
             databaseconnection.OpenConnection();
-            MySqlDataReader reader = myCommand.ExecuteReader();
+            SqlDataReader reader = myCommand.ExecuteReader();
             try {
                 while (reader.Read()) {
                     lstbhn.Add(new Bahan(reader.GetInt32(0), reader.GetString(1), reader.GetChar(2)));

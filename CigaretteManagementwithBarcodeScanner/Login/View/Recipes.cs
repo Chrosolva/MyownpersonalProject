@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient; 
+using System.Data.SqlClient; 
 
 namespace Login
 {
@@ -23,10 +23,10 @@ namespace Login
             
 
             ConnectDB databaseconnection = new ConnectDB();
-            MySqlDataAdapter adapter;
+            SqlDataAdapter adapter;
             if (databaseconnection.OpenConnection() == true)
             {
-                adapter = new MySqlDataAdapter("SELECT DISTINCT `resep`.`nama_resep` FROM `resep` WHERE `resep`.`Grade`!='' ;", databaseconnection.connection);
+                adapter = new SqlDataAdapter("SELECT DISTINCT resep.nama_resep FROM resep WHERE resep.Grade!='' ;", databaseconnection.connection);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds,"resep");
                 Dgvforrecipelist.DataSource = ds.Tables[0];

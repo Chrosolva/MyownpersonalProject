@@ -33,7 +33,7 @@ namespace Login
 
         public string InsertintoDrawer(string ID_Rak, Bahan bahan)
         {
-            return "UPDATE `rak` SET `rak`.`ID_Bahan` = " + bahan.ID_Bahan.ToString() +  " ,`rak`.`Tanggal_Masuk` = '" + this.settanggal() + "' WHERE `rak`.`ID_Rak` = '" + ID_Rak + "';";
+            return "UPDATE rak SET rak.ID_Bahan = " + bahan.ID_Bahan.ToString() +  " ,rak.Tanggal_Masuk = '" + this.settanggal() + "' WHERE rak.ID_Rak = '" + ID_Rak + "';";
         }
 
         public void setIDrak(Rak x) {

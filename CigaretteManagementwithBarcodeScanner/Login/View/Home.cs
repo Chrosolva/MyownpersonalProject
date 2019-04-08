@@ -50,5 +50,17 @@ namespace Login
             Recipes makerecipe = new Recipes();
             makerecipe.Show(); 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SendLocation frmsendlocation = new SendLocation();
+            this.Hide();
+            frmsendlocation.Show(); 
+        }
     }
 }

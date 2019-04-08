@@ -4,18 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //add mysql Library 
-using MySql.Data.MySqlClient;
+using System.Data; 
+using System.Data.SqlClient; 
 using System.Windows.Forms;
 
 namespace Login
 {
-    class ConnectDB
+    public class ConnectDB
     {
-        public MySqlConnection connection;
+        public SqlConnection connection = new SqlConnection();
+        public SqlDataAdapter da;
+        public DataTable dt;
+        public SqlCommand cmd;
+        public SqlTransaction transaction; 
         private string server;
         private string database;
-        private string uid;
-        private string password;
         public string connectionString;
 
         //Constructor
@@ -26,15 +29,14 @@ namespace Login
 
         private void Initialize()
         {
-            server = "localhost";
-            database = "material_management";
-            uid = "root";
-            password = "";
+            server = "DESKTOP-L6KAGNN";
+            database = "MaterialManagement";
+            
 
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            database + ";" + "Trusted_Connection=True;";
 
-            connection = new MySqlConnection(connectionString);
+            connection = new SqlConnection(connectionString);
 
         }
 
@@ -46,7 +48,7 @@ namespace Login
                 connection.Open();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 //When handling errors, you can your application's response based 
                 //on the error number.
@@ -75,7 +77,7 @@ namespace Login
                 connection.Close();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;
@@ -90,9 +92,9 @@ namespace Login
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query,connection);
+                SqlCommand cmd = new SqlCommand(query,connection);
 
-                MySqlDataReader cmdreader;
+                SqlDataReader cmdreader;
                 cmdreader = cmd.ExecuteReader();
                 while (cmdreader.Read()) {
                 }
@@ -109,7 +111,7 @@ namespace Login
             if (this.OpenConnection() == true)
             {
                 //create mysql command
-                MySqlCommand cmd = new MySqlCommand();
+                SqlCommand cmd = new SqlCommand();
                 //Assign the query using CommandText
                 cmd.CommandText = query;
                 //Assign the connection using Connection
@@ -129,7 +131,7 @@ namespace Login
 
             if (this.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 this.CloseConnection();
             }
@@ -150,9 +152,9 @@ namespace Login
             if (this.OpenConnection() == true)
             {
                 //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                SqlCommand cmd = new SqlCommand(query, connection);
                 //Create a data reader and Execute the command
-                MySqlDataReader dataReader = cmd.ExecuteReader();
+                SqlDataReader dataReader = cmd.ExecuteReader();
 
                 //Read the data and store them in the list
                 while (dataReader.Read())
@@ -187,7 +189,7 @@ namespace Login
             if (this.OpenConnection() == true)
             {
                 //Create Mysql Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                SqlCommand cmd = new SqlCommand(query, connection);
 
                 //ExecuteScalar will return one value
                 Count = int.Parse(cmd.ExecuteScalar() + "");
@@ -200,6 +202,46 @@ namespace Login
             else
             {
                 return Count;
+            }
+        }
+
+        public int countdata(string query)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
+        public DataTable FillDataTable(string query)
+        {
+            try
+            {
+                this.OpenConnection();
+                da = new SqlDataAdapter(query, connection);
+                dt = new DataTable();
+                da.Fill(dt);
+                da.Dispose();
+                return dt;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                this.CloseConnection();
             }
         }
 
